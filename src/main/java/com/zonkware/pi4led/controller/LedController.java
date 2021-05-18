@@ -14,7 +14,7 @@ public class LedController {
         return "Hello world!";
     }
 
-    @RequestMapping("/light")
+    @RequestMapping("/luz")
     public String light() {
         if (pin == null) {
             GpioController gpio = GpioFactory.getInstance();
