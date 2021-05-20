@@ -18,7 +18,7 @@ public class LedController {
 
     @RequestMapping("/")
     public String greeting() {
-        return "Hello world!";
+        return "Hello world! "+LocalDateTime.now();
     }
 
     @RequestMapping("/luz")
@@ -30,7 +30,7 @@ public class LedController {
 
         pin.toggle();
 
-        return "OK "+LocalDateTime.now()+" ok";
+        return "OK "+LocalDateTime.now();
     }
 
 }
