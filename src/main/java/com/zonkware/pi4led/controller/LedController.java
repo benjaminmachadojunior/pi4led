@@ -21,16 +21,18 @@ public class LedController {
         return "Hello world! "+LocalDateTime.now();
     }
 
+    private String ligou = "desligou";
     @RequestMapping("/luz")
     public String luz() {
         if (pin == null) {
             GpioController gpio = GpioFactory.getInstance();
             pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+            ligou = "ligou";
         }
 
         pin.toggle();
 
-        return "OK "+LocalDateTime.now();
+        return "OK "+LocalDateTime.now()+ ligou;
     }
 
 }
